@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.qcloud:cos_api:5.6.38">
+    <CLASSES>
+      <root url="jar://D:/maven/repository/com/qcloud/cos_api/5.6.38/cos_api-5.6.38.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/maven/repository/com/qcloud/cos_api/5.6.38/cos_api-5.6.38-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/maven/repository/com/qcloud/cos_api/5.6.38/cos_api-5.6.38-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
