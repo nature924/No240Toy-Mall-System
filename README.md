@@ -1,72 +1,64 @@
-# ToyMall
+基于Springboot的玩具商城系统
+=
+### 完整代码获取地址：从戎源码网 ([https://armycodes.com/](https://armycodes.com/))
+### 作者微信：19941326836  QQ：952045282 
+### 承接计算机毕业设计、Java毕业设计、Python毕业设计、深度学习、机器学习
+### 选题+开题报告+任务书+程序定制+安装调试+论文+答辩ppt 一条龙服务
+### 所有选题地址https://github.com/nature924/allProject
 
-## 介绍
-**基于SpringBoot开发的就是玩玩具商城**
-> **源码整洁请放心食用，并且可拓展性较高，维护成本也低。开源不易 希望给个STAR**
-## 软件架构
-- 框架选用：SpringBoot + Mybatis-Plus + LayUi 
-- 持久层：
-   - Mysql 存储数据
-   - Redis 存储订单数据(支付订单号的异步获取)
-   - 腾讯云对象存储COS(你也可以不使用，我主要使用和这个上传图片，可以弄本地的)
+一、项目介绍
+---
+基于Springboot框架实现的玩具商城系统包含两种角色：管理员、用户,系统分为前台和后台两大模块，主要功能如下。
+### 【前台】：
+1. 商城：用户可以浏览和搜索商品，查看商品详情，选择商品加入购物车，进行下单购买。
+2. 交流：用户可以在论坛中与其他用户交流，发表帖子、评论和回复。
+3. 我的主页：用户可以查看自己的个人信息，包括头像、昵称等，同时也可以查看自己的购物记录、订单状态等。
+4. 我的购物车：用户可以管理购物车中的商品，包括添加、删除商品、修改商品数量等操作。
+5. 收货订单：用户可以查看自己的订单列表，包括待付款、待发货、待收货和已完成的订单，可以查看订单详情、确认收货等。
+6. 收货地址：用户可以管理自己的收货地址，包括添加、编辑、删除地址等操作。
+7. 基本信息：用户可以管理自己的基本信息，包括修改密码、修改个人资料等。
+8. 我的文章：用户可以发布和管理自己的文章，包括添加、编辑、删除文章等操作。
+9. 我的提成：用户可以查看自己的提成情况，包括提成金额、提成历史等信息。
+
+### 【后台】：
+1. 系统管理：管理员可以管理系统的用户账号和权限，包括添加、编辑、删除用户，设置用户权限等。
+2. 商品管理：管理员可以管理商品信息，包括添加、编辑、删除商品，设置商品属性、库存等。
+3. 类型管理：管理员可以管理商品的类型信息，包括添加、编辑、删除类型，设置类型属性等。
+4. 订单管理：管理员可以管理用户的订单，包括查看订单列表、修改订单状态等。
+5. 文章管理：管理员可以管理用户的文章，包括查看文章列表、编辑、删除文章等操作。
 
 
-## 安装教程
-**开发工具选用的IDEA直接导入**
-- application.yml 配置好数据库地址
-- JedisConfig 配置好你的Redis地址
-- ImgController 
-   - 默认是使用的COS对象存储需要配置自己的
-   - 如果不想用可以使用ImgControllerNoCos更换接口地址就行
-- AlipayConfig 配置自己的公钥私钥和APPID支付用的(使用的是支付宝沙箱支付)
-- 使用Navicat 或者 DataGrip 导入数据库 
-- 前端地址:http://localhost:8080   **用户名:13888888888 密码:123465**
-- 后端地址:http://localhost:8080/login.html   **用户名:admin 密码:123456**
 
 
-## **主要功能**
-  ###以下图片**只展示了一部分重要的功能，其余的小型基本操作或者是不重要的功能都没有展示。**
-> 前台功能概览
-- 购物功能 用户查看主界面可以根据分类选择商品 也可以直接购买热卖商品
-  ![商城主界面](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-index.png)
-  ![添加购物车界面](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-addGat.png)
-  添加进入购物车选择收货地址
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-gat.png)
-  支付宝付款
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-aliPay.png)
-  订单
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-order.png)
-  文章功能 用户A可以为某些商品A写一篇文章发表 不同的商品有不一样的佣金，如果用户B在用户A的文章下购买产品的话，
-  发表文章的用户A便会因为用户B的一次下单获取到该件商品A的对应佣金。 用户便可以提取佣金转化为积分。在他购物的
-  时候可以用积分抵消一部分付款金额。这样商城的营业额上来的同时，用户也得到了利益。 
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-article.png)
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-articleInfo.png)
-  右侧的浮动窗口是随机推荐的商品，不是作者推荐。
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-articleInfo2.png)
-  编辑文章
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-addArticle.png)
-  浏览已发文章
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-addArticle2.png)
-  提取佣金
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-money.png)
-> 后台功能概览
-- 后台主界面 是一个可爱的会一直尝试跳起来抓鼠标的小猫
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-adminIndex.png)
-  管理用户的功能，图片展示的是管理管理员有用户，还可以管理商城用户，还有不同权限的角色分配
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-adminUser.png)
-  管理员订单
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-adminOrder.png)
-  管理员审核文章
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-adminArticle.png)
-  管理员管理商品
-  ![](https://s-y-1304244043.cos.ap-beijing.myqcloud.com/gitee/ToyMall-shopList.png)
-## 特技
 
- ██████████                   ████     ████            ██  ██
-░░░░░██░░░            ██   ██░██░██   ██░██           ░██ ░██
-    ░██      ██████  ░░██ ██ ░██░░██ ██ ░██  ██████   ░██ ░██
-    ░██     ██░░░░██  ░░███  ░██ ░░███  ░██ ░░░░░░██  ░██ ░██
-    ░██    ░██   ░██   ░██   ░██  ░░█   ░██  ███████  ░██ ░██
-    ░██    ░██   ░██   ██    ░██   ░    ░██ ██░░░░██  ░██ ░██
-    ░██    ░░██████   ██     ░██        ░██░░████████ ███ ███
-    ░░      ░░░░░░   ░░      ░░         ░░  ░░░░░░░░ ░░░ ░░░ 
+
+二、项目技术
+---
+- 编程语言：Java
+- 数据库：MySQL
+- 项目管理工具：Maven
+- 前端技术：VUE、HTML、Jquery、Bootstrap
+- 后端技术：Spring、SpringMVC、MyBatis
+
+三、运行环境
+---
+- 操作系统：Windows、macOS都可以
+- JDK版本：JDK1.8以上都可以
+- 开发工具：IDEA、Ecplise、Myecplise都可以
+- 数据库: MySQL5.7以上都可以
+- Tomcat：任意版本都可以
+- Maven：任意版本都可以
+
+四、运行截图
+---
+
+### 程序截图：
+![image/1.png](image/1.png)
+![image/1.png](image/2.png)
+![image/1.png](image/3.png)
+![image/1.png](image/4.png)
+![image/1.png](image/5.png)
+![image/1.png](image/6.png)
+
+
+
